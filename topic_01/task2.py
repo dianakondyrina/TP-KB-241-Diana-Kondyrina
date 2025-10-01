@@ -1,4 +1,4 @@
-text="Hello world!"
+text="HeLLo woRld!"
 strip_text=text.strip()
 print(strip_text)
 
