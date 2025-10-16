@@ -3,14 +3,14 @@ b = float(input("Напишіть друге число: "))
 operation = input("Оберіть операцію: ")
 
 if operation == "+":
-     print("Результат: {a + b}")
+     print(f"Результат: {a + b}")
 elif operation == "-":
-    print("Результат: {a - b}")
+    print(f"Результат: {a - b}")
 elif operation == "*":
-    print("Результат: {a * b}")
+    print(f"Результат: {a * b}")
 else:
     if b == 0:
-              print("на 0 не ділять")
+              print(f"на 0 не ділять")
              
     else:
                 print(f"Результат: {a / b}")
