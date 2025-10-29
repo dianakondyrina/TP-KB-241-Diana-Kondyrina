@@ -12,6 +12,7 @@ match operation:
       print(f"Результат: {a * b}")
    case "/":
       if b == 0:
-       print("на 0 не ділять")
+       print(f"на 0 не ділять")
       else:
           print(f"Результат: {a / b}")
+          
