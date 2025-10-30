@@ -8,14 +8,16 @@ list = [
 
 def printAllList():
     for elem in list:
-         print(f"{elem['name']}, {elem['phone']}, {elem['address']}, {elem['date']}")
+         strForPrint = "Student name is " + elem["name"] + ",  Phone is " + elem["phone"] + ", Adress is " + elem["address"] + ", Date of birth is " + elem["date"]
+         print(strForPrint)
+    return
 
 def addNewElement():
     name = input("Pease enter student name: ")
     phone = input("Please enter student phone: ")
     address = input("Please enter student address: ")
     date = input("Please enter student date of birth: ")
-    newS = {"name": name, "phone": phone, "address": address, "date": date}
+    newItem = {"name": name, "phone": phone, "address": address, "date": date}
 
     pos = 0
     for elem in list:
@@ -23,8 +25,9 @@ def addNewElement():
             pos += 1
         else:
             break
-    list.insert(pos, newS)
-    print("Added")
+    list.insert(pos, newItem)
+    print("New element has been added")
+    return
 
 def deleteElement():
     name = input("Please enter name to be delated: ")
