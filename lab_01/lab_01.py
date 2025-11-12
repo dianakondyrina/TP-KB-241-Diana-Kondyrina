@@ -19,55 +19,81 @@ def addNewElement():
     date = input("Please enter student date of birth: ")
     newItem = {"name": name, "phone": phone, "address": address, "date": date}
 
-    pos = 0
+    insertPosition = 0
     for elem in list:
         if name > elem["name"]:
-            pos += 1
+            insertPosition += 1
         else:
             break
-    list.insert(pos, newItem)
+    list.insert(insertPosition, newItem)
     print("New element has been added")
     return
 
 def deleteElement():
     name = input("Please enter name to be delated: ")
-    for elem in list:
-        if elem["name"] == name:
-            list.remove(elem)
-            print("Deleted")
-            return
-    print("Student not found")
+    deletePosition = -1
+    for item in list:
+        if name == item["name"]:
+            deletePosition = list.index(item)
+            break
+    if deletePosition == -1:
+        print("Element was not found")
+    else:
+        print("Dele position " + str(deletePosition))
+        del list[deletePosition]
+    return
 
 def updateElement():
     name = input("Please enter name to be updated: ")
-    for elem in list:
-        if elem["name"] == name:
-            elem["name"] = input("New name: ")
-            elem["phone"] = input("New phone: ")
-            elem["address"] = input("New address: ")
-            elem["date"] = input("New date of birth: ")
+    updatePosition = -1
 
-            list.sort(key=lambda x: x["name"])
-            print("Updated")
-            return
-    print("Student not found")
+    for item in list:
+        if name == item["name"]:
+            updatePosition = list.index(item)
+            break
+    if updatePosition == -1:
+        print("Student not found")
+        return
+
+    new_name = input("New name: ")
+    new_phone = input("New phone: ")
+    new_address = input("New address: ")
+    new_date = input("New date of birth: ")
+
+    del list[updatePosition]
+    newS = {"name": new_name, "phone": new_phone, "address": new_address, "date": new_date}
+
+    insertPosition = 0
+    for item in list:
+        if new_name > item["name"]:
+            insertPosition += 1
+        else:
+            break
+    list.insert(insertPosition, newS)
+    print("Student updated successfully")
+    return
 
 def main():
     while True:
-        choice = input("\nPlease specify the action [ C create, U update, D delete, P print,  X exit ] ").lower()
+        chouse = input("Please specify the action [ C create, U update, D delete, P print,  X exit ] ")
+        match chouse:
+            case "C" | "c":
+                print("New element will be created:")
+                addNewElement()
+                printAllList()
+            case "U" | "u":
+                print("Existing element will be updated")
+            case "D" | "d":
+                print("Element will be deleted")
+                deleteElement()
+            case "P" | "p":
+                print("List will be printed")
+                printAllList()
+            case "X" | "x":
+                print("Exit()")
+                break
+            case _:
+                print("Wrong choice")
 
-        if choice == "c":
-            addNewElement()
-        elif choice == "u":
-            updateElement()
-        elif choice == "d":
-            deleteElement()
-        elif choice == "p":
-            printAllList()
-        elif choice == "x":
-            print("Exit.")
-            break
-        else:
-            print("Wrong choice!")
 
 main()

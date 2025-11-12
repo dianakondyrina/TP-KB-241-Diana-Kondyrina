@@ -1,4 +1,4 @@
-colors = ["blue", "red", "white", "pink", "yellow"]
+colors = ["blue", "pink", "red", "white", "yellow"]
 print(colors)
 
 def find_position(sort, value):
