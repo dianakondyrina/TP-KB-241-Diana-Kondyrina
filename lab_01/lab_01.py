@@ -83,6 +83,8 @@ def main():
                 printAllList()
             case "U" | "u":
                 print("Existing element will be updated")
+                updateElement()
+                printAllList()
             case "D" | "d":
                 print("Element will be deleted")
                 deleteElement()
