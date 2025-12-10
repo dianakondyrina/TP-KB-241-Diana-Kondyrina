@@ -9,7 +9,7 @@ rules = [
 user = input("Enter 'stone', 'scissors', 'paper': ").lower()
 computer = random.choice(["stone", "scissors", "paper"])
 
-print("Computer chose: {computer}")
+print(f"Computer chose: {computer}")
 
 if user == computer:
     print("Draw")

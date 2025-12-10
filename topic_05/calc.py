@@ -1,6 +1,6 @@
 from operations import enter_num, enter_oper, operation
 
-print("Напишіть числа чи 'exit' аби зупинитися")
+print("Напишіть числа чи 'exit' аби закінчити")
 
 while True:
     num1 = enter_num("Введіть перше число: ")

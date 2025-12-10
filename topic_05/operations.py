@@ -3,8 +3,14 @@ from functions import addition, subtraction, multiplication, division
 def enter_num(prompt):
     while True:
         num_input = input(prompt)
-        if num_input == 'exit':
-            return
+
+        if num_input.lower() == "exit":
+            return None
+        try:
+            number = float(num_input)
+            return number
+        except ValueError:
+            print("Помилка: введіть число!")
 
 
 def enter_oper():
