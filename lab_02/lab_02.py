@@ -8,7 +8,6 @@ students = [
     {"name": "Zak", "phone": "0630000000", "address": "Musical St., 167b", "date": "24.07.2003"}
 ]
 
-
 def load_CSV():
     if len(argv) < 2:
         print("No CSV file specified. Using default list.")
@@ -30,7 +29,6 @@ def load_CSV():
         print("CSV loaded:", file_name)
     except FileNotFoundError:
         print("CSV file not found. Using default list.")
-
 
 def save_CSV():
     file_name = "lab2_out.csv"
@@ -77,7 +75,6 @@ def deleteStudent():
 
     print("Student not found.")
 
-
 def updateStudent():
     name = input("Enter name to update: ")
 
@@ -106,7 +103,6 @@ def updateStudent():
     students.insert(pos, new_item)
     print("Student updated.")
 
-
 def main():
     load_CSV()
 
@@ -130,6 +126,5 @@ def main():
                 break
             case _:
                 print("Invalid option.")
-
 
 main()
