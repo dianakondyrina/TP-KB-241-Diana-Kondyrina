@@ -1,4 +1,4 @@
-from operation import enter_num, enter_oper, operation
+from operations import enter_num, enter_oper, operation
 
 print("Напишіть числа чи 'exit' аби закінчити")
 
